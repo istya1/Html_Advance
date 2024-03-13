@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Halaman Beranda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Istya Yulia">
+        <meta name="nim" content="233307019">
+        <link rel="icon" type="img/png" href="html_advance/gambar/icon.png">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header{
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            nav{
+                float: left;
+                width: 30%;
+                height: 300px;
+                background: #ccc;
+                padding: 20px;
+            }
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            article{
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                height: 300px;
+            }
+            section::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+            footer{
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            @media (max-width: 600px){
+                nav, article{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Halaman Home</h2>
+            
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="gambar.html">Gambar</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a href="audio.html">Audio</a></li>
+                    <li><a href="vidio.html">Video</a></li>
+                    <li><a href="svg.html">SVG</a></li>
+                    <li><a href="canvas.html">Canvas</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </nav>
+            <article>
+                <h1>Home</h1>
+                <div class="form-container">
+                    <form action="#" method="post">
+                      <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <input type="text" id="nama" name="nama" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="no_telepon">No. Telepon (Format XXXX-XXXXXX):</label>
+                        <input type="text" id="no_telepon" name="no_telepon" pattern="[0-9]{4}-[0-9]{6}" title="Format yang benar: XXXX-XXXXXX" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Alamat Email (Format nama@domain.com):</label>
+                        <input type="email" id="email" name="email" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="tanggal_lahir">Tanggal Lahir (mm/dd/yyyy):</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" min="1987-01-01" max="1993-01-01" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="tujuan_pertemuan">Tujuan Pertemuan:</label>
+                        <input type="text" id="tujuan_pertemuan" name="tujuan_pertemuan" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="tingkat_kepentingan">Tingkat Kepentingan (0-10):</label>
+                        <input type="range" id="tingkat_kepentingan" name="tingkat_kepentingan" min="0" max="10" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="tanggal">Tanggal (di atas hari ini):</label>
+                        <input type="date" id="tanggal" name="tanggal" min="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="jam">Jam (17.00-21.00 WIB):</label>
+                        <input type="time" id="jam" name="jam" min="17:00" max="21:00" required>
+                      </div>
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+                  <script>
+                    // Set tanggal minimal ke hari ini
+                    var today = new Date().toISOString().split('T')[0];
+                    document.getElementById('tanggal').setAttribute('min', today);
+                  </script>
+        </section>
+
+        <footer>
+            <p>Istya Yulia</p> <!--ubah sesuai selera anda--->
+        </footer>
+    </body>
+</html>
